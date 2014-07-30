@@ -1,13 +1,59 @@
 <html>
     <head>
         <title>My app</title>
+        <style>
+            * { box-sizing: border-box; }
+
+            .wrapper { width: 800px; margin: 0; padding: 0; }
+            .left { float: left; width: 600px; padding-right: 20px; }
+            .right { float: right; width: 200px; }
+
+            .board {
+                width: 600px;
+            }
+
+            .cell {
+                width: 200px;
+                padding: 20px;
+                float: left;
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
         <!-- add stuff here! -->
 
+        <div class="wrapper">
+            <div class="left">
+                <div class="player-info">
+                    <label>Name:</label>
+                    <input type="text" name="name" />
+                </div>
 
+                <div class="board">
+                    <div class="cell row1 col1"></div>
+                    <div class="cell row1 col2"></div>
+                    <div class="cell row1 col3"></div>
+
+                    <div class="cell row2 col1"></div>
+                    <div class="cell row2 col2"></div>
+                    <div class="cell row2 col3"></div>
+
+                    <div class="cell row3 col1"></div>
+                    <div class="cell row3 col2"></div>
+                    <div class="cell row3 col3"></div>
+                </div>
+
+                <div class="message"></div>
+            </div>
+
+            <div class="right boards">
+
+            </div>
+        </div>
 
         <!-- =============== -->
+
         <script src="bower_components/lodash/dist/lodash.js"></script>
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="frontend.js"></script>
