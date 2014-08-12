@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Betterment Lite</title>
+        <style>
+            .input-row {
+                margin-bottom: 5px;
+            }
+
+            .errors {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Betterment Lite</h1>
+
+        <form id="signupForm">
+            <div class="errors"></div>
+
+            <div class="input-row">
+                <label>Username:</label>
+                <input type="text" name="username" />
+            </div>
+            <div class="input-row">
+                <label>Password:</label>
+                <input type="password" name="password" />
+            </div>
+
+            <div class="input-row">
+                <label>Deposit:</label>
+                <input type="text" name="deposit" />
+            </div>
+
+            <div class="input-row">
+                <input type="submit" value="Sign Up" />
+            </div>
+        </form>
+
+        <script src="bower_components/lodash/dist/lodash.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="signup.js"></script>
+    </body>
+</html>
