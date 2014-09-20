@@ -83,7 +83,9 @@ exports.listTickers = function() {
 };
 
 exports.listHoldings = function(userID) {
-    return query('select tickerID, sum(amount) as balance, sum(shares) as shares from transactions where userID = ? group by tickerID', [userID]);
+    return query('select tickerID, sum(amount) as balance, sum(shares) as shares ' +
+                 'from transactions where userID = ? group by tickerID having shares > 0',
+                 [userID]);
 };
 
 exports.createTransaction = function(request) {

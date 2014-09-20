@@ -94,6 +94,7 @@
         $.post('/transaction', getTransactionParams(this)).then(function() {
             clearInput(this);
             loadCurrentHoldings();
+            loadUserInfo();
         }.bind(this));
     });
 
