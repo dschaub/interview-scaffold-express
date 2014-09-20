@@ -3,17 +3,16 @@
 (function($) {
 
     $(function() {
-        $('#signupForm').submit(function(e) {
+        $('#login').submit(function(e) {
             e.preventDefault();
 
             $.ajax({
-                url: '/signup',
+                url: '/login',
                 type: 'POST',
 
                 data: {
                     username: $('[name=username]').val(),
                     password: $('[name=password]').val(),
-                    deposit: $('[name=deposit]').val()
                 },
 
                 success: function(response) {

@@ -1,8 +1,10 @@
 {
-	"name": "tic-tac-toe",
-	"version": "0.0.1",
-	"dependencies": {
-		"lodash": "2.4.1",
-		"jquery": "2.1.0"
-	}
+  "name": "tic-tac-toe",
+  "version": "0.0.1",
+  "dependencies": {
+    "lodash": "2.4.1",
+    "jquery": "2.1.0",
+    "mustache": "~0.8.2",
+    "accounting.js": "~0.3.2"
+  }
 }

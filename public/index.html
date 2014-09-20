@@ -1,15 +1,45 @@
 <html>
     <head>
-        <title>My app</title>
+        <title>Betterment Lite</title>
     </head>
     <body>
-        <!-- add stuff here! -->
+        <h1>Betterment Lite</h1>
 
+        <div class="user-info"></div>
 
+        <div class="main-wrapper">
+            <div class="tickers"></div>
+            <div class="current-holdings"></div>
+        </div>
 
-        <!-- =============== -->
+        <script id="ticker" type="x-tmpl-mustache">
+            <div class="ticker info-row" data-id="{{id}}">
+                <div class="col symbol">{{symbol}}</div>
+                <div class="col price">{{price}}</div>
+                <div class="col shares"><input type="text" name="shares" size="2" /></div>
+                <div class="col action"><button class="buy">Buy</button></div>
+            </div>
+        </script>
+
+        <script id="holding" type="x-tmpl-mustache">
+            <div class="holding info-row" data-tickerID="{{tickerID}}">
+                <div class="col symbol">{{ticker.symbol}}</div>
+                <div class="col shares-owned">{{shares}}</div>
+                <div class="col value">{{amount}}</div>
+                <div class="col shares"><input type="text" name="shares" size="2" /></div>
+                <div class="col action"><button class="sell">Sell</button></div>
+            </div>
+        </script>
+
+        <script id="user" type="x-tmpl-mustache">
+            Username: {{username}}
+            Balance: {{balance}}
+        </script>
+
         <script src="bower_components/lodash/dist/lodash.js"></script>
         <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/accounting.js/accounting.js"></script>
+        <script src="bower_components/mustache/mustache.js"></script>
         <script src="frontend.js"></script>
     </body>
 </html>

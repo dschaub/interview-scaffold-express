@@ -13,13 +13,22 @@ create table tickers (
     key(symbol)
 );
 
+insert into tickers (symbol, price) values
+    ('AAPL', 100.96),
+    ('FB', 77.81),
+    ('IBM', 194.00),
+    ('GOOG', 596.08),
+    ('MSFT', 47.52);
+
 create table transactions (
     id int primary key auto_increment not null,
+    userID int not null,
     tickerID int not null,
     type varchar(128) not null,
     shares int not null,
     amount decimal(19,2) not null,
+    key(userID),
     key(tickerID),
+    constraint userID_fk foreign key (userID) references users (id),
     constraint tickerID_fk foreign key (tickerID) references tickers (id)
 );
-
