@@ -3,7 +3,7 @@
 (function($) {
 
     $(function() {
-        $('#login').submit(function(e) {
+        $('#loginForm').submit(function(e) {
             e.preventDefault();
 
             $.ajax({
