@@ -1,0 +1,41 @@
+@import 'fonts.css';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+}
+
+h1, h2 {
+    font-weight: normal;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}
+
+.wrapper {
+    width: 800px;
+    margin: auto;
+}
+
+.list-wrapper {
+    position: relative;
+    overflow: auto;
+}
+
+.tickers-wrapper, .holdings-wrapper {
+    float: left;
+    width: 45%;
+}
+
+.tickers-wrapper {
+    margin-right: 5%;
+}

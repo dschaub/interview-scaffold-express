@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/eot/lato_bold.eot');
+  src: url('fonts/eot/lato_bold.eot?#iefix') format('embedded-opentype'),
+       url('fonts/svg/lato_bold.svg#LatoBold') format('svg'),
+       url('fonts/woff/lato_bold.woff') format('woff'),
+       url('fonts/ttf/lato_bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: url('fonts/eot/lato_italic.eot');
+  src: url('fonts/eot/lato_italic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/svg/lato_italic.svg#LatoItalic') format('svg'),
+       url('fonts/woff/lato_italic.woff') format('woff'),
+       url('fonts/ttf/lato_italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: url('fonts/eot/lato_black.eot');
+  src: url('fonts/eot/lato_black.eot?#iefix') format('embedded-opentype'),
+       url('fonts/svg/lato_black.svg#LatoBlack') format('svg'),
+       url('fonts/woff/lato_black.woff') format('woff'),
+       url('fonts/ttf/lato_black.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 900;
+  src: url('fonts/eot/lato_black_italic.eot');
+  src: url('fonts/eot/lato_black_italic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/svg/lato_black_italic.svg#LatoBlackItalic') format('svg'),
+       url('fonts/woff/lato_black_italic.woff') format('woff'),
+       url('fonts/ttf/lato_black_italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  src: url('fonts/eot/lato_bold_italic.eot');
+  src: url('fonts/eot/lato_bold_italic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/svg/lato_bold_italic.svg#LatoBoldItalic') format('svg'),
+       url('fonts/woff/lato_bold_italic.woff') format('woff'),
+       url('fonts/ttf/lato_bold_italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/eot/lato_light.eot');
+  src: url('fonts/eot/lato_light.eot?#iefix') format('embedded-opentype'),
+       url('fonts/svg/lato_light.svg#LatoLight') format('svg'),
+       url('fonts/woff/lato_light.woff') format('woff'),
+       url('fonts/ttf/lato_light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/eot/lato_regular.eot');
+  src: url('fonts/eot/lato_regular.eot?#iefix') format('embedded-opentype'),
+       url('fonts/svg/lato_regular.svg#LatoRegular') format('svg'),
+       url('fonts/woff/lato_regular.woff') format('woff'),
+       url('fonts/ttf/lato_regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'ModernPictogramsPro';
+    font-style: normal;
+    font-weight: normal;
+    src: url('fonts/eot/modernpictogramspro_2-webfont.eot');
+    src: url('fonts/eot/modernpictogramspro_2-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/woff/modernpictogramspro_2-webfont.woff') format('woff'),
+         url('fonts/ttf/modernpictogramspro_2-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/** Workaround for font svg rendering issue. If it is in a media query it works fine. **/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 700;
+      src: url('fonts/svg/lato_bold.svg#LatoBold') format('svg');
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 400;
+      src: url('fonts/svg/lato_italic.svg#LatoItalic') format('svg');
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 900;
+      src: url('fonts/svg/lato_black.svg#LatoBlack') format('svg');
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 900;
+      src: url('fonts/svg/lato_black_italic.svg#LatoBlackItalic') format('svg');
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 700;
+      src: url('fonts/svg/lato_bold_italic.svg#LatoBoldItalic') format('svg');
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 300;
+      src: url('fonts/svg/lato_light.svg#LatoLight') format('svg');
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 400;
+      src: url('fonts/svg/lato_regular.svg#LatoRegular') format('svg');
+    }
+}

@@ -1,34 +1,68 @@
 <html>
     <head>
         <title>Betterment Lite</title>
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <h1>Betterment Lite</h1>
+        <div class="wrapper">
+            <h1>Betterment Lite</h1>
 
-        <div class="user-info"></div>
+            <div class="user-info"></div>
 
-        <div class="main-wrapper">
-            <div class="tickers"></div>
-            <div class="current-holdings"></div>
+            <div class="list-wrapper">
+                <div class="tickers-wrapper">
+                    <h2>Available Tickers</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Price</th>
+                                <th>Shares</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="tickers">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="holdings-wrapper">
+                    <h2>Current Holdings</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Owned</th>
+                                <th>Value</th>
+                                <th>Shares</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="current-holdings">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
         <script id="ticker" type="x-tmpl-mustache">
-            <div class="ticker info-row" data-id="{{id}}">
-                <div class="col symbol">{{symbol}}</div>
-                <div class="col price">{{price}}</div>
-                <div class="col shares"><input type="text" name="shares" size="2" /></div>
-                <div class="col action"><button class="buy">Buy</button></div>
-            </div>
+            <tr class="ticker info-row" data-id="{{id}}">
+                <td class="col symbol">{{symbol}}</td>
+                <td class="col price">{{price}}</td>
+                <td class="col shares"><input type="text" name="shares" size="2" /></td>
+                <td class="col action"><button class="buy">Buy</button></td>
+            </tr>
         </script>
 
         <script id="holding" type="x-tmpl-mustache">
-            <div class="holding info-row" data-tickerID="{{tickerID}}">
-                <div class="col symbol">{{ticker.symbol}}</div>
-                <div class="col shares-owned">{{shares}}</div>
-                <div class="col value">{{amount}}</div>
-                <div class="col shares"><input type="text" name="shares" size="2" /></div>
-                <div class="col action"><button class="sell">Sell</button></div>
-            </div>
+            <tr class="holding info-row" data-id="{{tickerID}}">
+                <td class="col symbol">{{ticker.symbol}}</td>
+                <td class="col shares-owned">{{shares}}</td>
+                <td class="col value">{{balance}}</td>
+                <td class="col shares"><input type="text" name="shares" size="2" /></td>
+                <td class="col action"><button class="sell">Sell</button></td>
+            </tr>
         </script>
 
         <script id="user" type="x-tmpl-mustache">

@@ -60,7 +60,7 @@
     function renderAll($container, template) {
         return function(items) {
             if (items.length === 0) {
-                $container.html('Nothing to show.');
+                $container.html('<tr><td colspan="4">Nothing to show.</td></tr>');
             } else {
                 items.forEach(function(item) {
                     $container.append(render(template, item));
@@ -69,10 +69,32 @@
         };
     }
 
+    function getTransactionParams(button) {
+        var tickerID = $(button).closest('.info-row').data('id'),
+            shares = $(button).closest('.info-row').find('[name=shares]').val();
+
+        return {
+            type: $(button).is('.buy') ? 'BUY' : 'SELL',
+            tickerID: tickerID,
+            shares: shares
+        };
+    }
+
+    function clearInput(button) {
+        $(button).closest('.info-row').find('[name=shares]').val('');
+    }
+
     $(function() {
         loadTickers();
         loadCurrentHoldings();
         loadUserInfo();
+    });
+
+    $(document).on('click', '.buy, .sell', function() {
+        $.post('/transaction', getTransactionParams(this)).then(function() {
+            clearInput(this);
+            loadCurrentHoldings();
+        }.bind(this));
     });
 
 })(jQuery);

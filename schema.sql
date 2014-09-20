@@ -18,7 +18,9 @@ insert into tickers (symbol, price) values
     ('FB', 77.81),
     ('IBM', 194.00),
     ('GOOG', 596.08),
-    ('MSFT', 47.52);
+    ('MSFT', 47.52),
+    ('AMZN', 331.32),
+    ('CMG', 664.09);
 
 create table transactions (
     id int primary key auto_increment not null,
