@@ -34,7 +34,6 @@ function beginTransaction() {
         if (err) {
             def.reject(err);
         } else {
-            console.log('transaction started');
             def.resolve();
         }
     });
@@ -49,7 +48,6 @@ function commitTransaction() {
         if (err) {
             def.reject(err);
         } else {
-            console.log('transaction committed');
             def.resolve();
         }
     });
@@ -91,8 +89,6 @@ exports.listHoldings = function(userID) {
 exports.createTransaction = function(request) {
     var def = Q.defer();
 
-    console.log('selecting ticker ' + request.tickerID);
-
     query('select * from tickers where id = ?', [request.tickerID])
         .then(function(results) {
             if (!results.length) {
@@ -101,39 +97,29 @@ exports.createTransaction = function(request) {
             }
 
             var ticker = results[0],
-                amount = request.shares * ticker.price;
+                amount = request.shares * ticker.price,
+                shares = request.shares;
 
             if (request.type === 'SELL') {
                 amount *= -1;
+                shares *= -1;
             }
-
-            console.log('about to create transaction');
 
             return beginTransaction()
                 .then(function() {
-                    console.log('creating transaction record');
-
                     return query('insert into transactions (userID, tickerID, type, shares, amount) values (?, ?, ?, ?, ?)',
-                      [request.userID, ticker.id, request.type, request.shares, amount]);
+                      [request.userID, ticker.id, request.type, shares, amount]);
                 })
                 .then(function() {
-                    console.log('updating user balance');
-
                     return query('update users set balance = balance - ?', [amount]);
                 })
                 .then(function() {
-                    console.log('committing db transaction');
-
                     return commitTransaction();
                 })
                 .then(function() {
-                    console.log('resolving outer promise');
-
                     def.resolve();
                 })
                 .catch(function(err) {
-                    console.log('got an error, rolling back');
-
                     db.rollback(function() {
                         def.reject(err);
                     });
